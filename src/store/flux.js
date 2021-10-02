@@ -19,8 +19,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(respuesta => respuesta.json())
                     .then(data => setStore({ products: data }))
                     .catch(error => console.log(error))
-
-
             },
 
             capturaCampos: (e) => {
@@ -43,11 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 .then(respuesta => respuesta.json())
                 .then(data => setStore({ products: data }))
                 .catch(error => console.log(error))
-
-
-
             }
-
         },
     };
 };

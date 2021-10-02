@@ -11,7 +11,7 @@ return (<>
                 
                         <form className="d-flex" onSubmit={e => actions.enviarFormulario(e)}>
                         {/* onsubmit captura los campos con el enter y los envia al back */}
-                            <input className="form-control me-2" name="buscador" type="search" placeholder="Search" aria-label="Search" onChange={(e) => actions.capturaCampos(e)}></input>
+                            <input className="form-control me-2" name="buscador" type="search" placeholder="Ingrese nombre del producto a comprar" aria-label="Search" onChange={(e) => actions.capturaCampos(e)}></input>
                             
                             <button className="btn btn-outline-success" type="submit"><img src={"../img/lupadebuscar" + ".PNG"} width="30" height="30" className="rounded img-fluid" alt="...imagen..."></img></button>
                         </form>

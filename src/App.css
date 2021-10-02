@@ -16,3 +16,14 @@ body {
 .bannergeneral {
     padding: 20px;
 }
+
+.card {
+    height: 500px;
+    padding: 10px;    
+}
+
+.card .imagenpro {
+object-fit: contain;
+padding: 10px;
+
+}
