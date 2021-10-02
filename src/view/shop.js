@@ -19,6 +19,8 @@ const Shop = () => {
 
             <div className="row">
 
+                {/* Mostrando los productos, traidos desde el componente */}
+
                 <ProductCard />
 
             </div>

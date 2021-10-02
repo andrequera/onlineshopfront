@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Shop from './view/shop';
 import injectContext from "./store/appContext"
 import BannerGeneral from './components/BannerGeneral';
+import Buy from './view/buy';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
 
         <Route exact path="/" component={Shop} />
           <Route exact path="/shop" component={Shop} />
+          <Route exact path="/buy" component={Buy} />
           
 
 
