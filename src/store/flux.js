@@ -20,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             getProduct: () => {
 
-                fetch("http://localhost:8080/api/products")
+                fetch("https://fierce-island-50875.herokuapp.com/api/products")
                     .then(respuesta => respuesta.json())
                     .then(data => setStore({ products: data }))
                     .catch(error => console.log(error))
@@ -42,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                 console.log(store.buscador, "lo que busca el usuario en el back")
 
-                fetch("http://localhost:8080/api/products?name=" + store.buscador)
+                fetch("https://fierce-island-50875.herokuapp.com/products?name=" + store.buscador)
                     .then(respuesta => respuesta.json())
                     .then(data => setStore({ products: data }))
                     .catch(error => console.log(error))
