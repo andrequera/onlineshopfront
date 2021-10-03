@@ -1,11 +1,14 @@
 import React, { useContext, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { Context } from "../store/appContext"
 
 const ProductCard = () => {
     const { store, actions } = useContext(Context)
+    const history = useHistory()
     useEffect(() => {
         actions.getProduct()
     }, [])
+    console.log(store.products,"analizando error")
     return (<>
         {
             store.products !== null ?
@@ -27,31 +30,27 @@ const ProductCard = () => {
                                     </div>
 
                                     <div className="text-center">
-                                    <input className="text-center" placeholder="#" type ="number" id="quantity" name="quantity" min="1" max="100"></input>
+                                        <input className="text-center" name="cantidad" placeholder="#" type="number" id="quantity" min="1" max="100" onChange={(e) => actions.capturaCampos(e)}></input>
                                     </div>
 
                                     <div className="card-footer text-center bg-transparent border-0">
-
-                                        <button href="/#" className="btn btn-outline-success">Comprar</button>
-
-
-                                        </div>
-
-
+                                        <button onClick={() => actions.enviarCompra(product.price,product.name,history)} className="btn btn-outline-success">Comprar</button>
                                     </div>
+
                                 </div>
+                            </div>
 
-                                )
+                        )
                     })
-                                )
-                                :
-                                (
-                                <h1> No se encuentran los productos </h1>
+                )
+                :
+                (
+                    <h1> No se encuentran los productos </h1>
 
-                                )
+                )
         }
 
-                            </>)
-                    }
+    </>)
+}
 
 export default ProductCard;

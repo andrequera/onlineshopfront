@@ -4,6 +4,7 @@ import { Context } from "../store/appContext"
 
 const Shop = () => {
 const { store, actions } = useContext(Context)
+
 return (<>
         <div className="container">
             <div className="row  py-4">

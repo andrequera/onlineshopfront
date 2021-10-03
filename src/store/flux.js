@@ -7,7 +7,12 @@ const getState = ({ getStore, getActions, setStore }) => {
             discount: "",
             category: "",
             products: null,
-            buscador: ""
+            buscador: "",
+            cantidad: "",
+            namebuy: "",
+            cantidadbuy: "",
+            pricebuy: ""
+
         },
 
         actions: {
@@ -22,27 +27,39 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
 
             capturaCampos: (e) => {
-
                 const store = getStore();
                 console.log(e.target.value, "campos del buscador inicial")
+                console.log(e.target.value, "campos de la cantidad")
 
                 setStore({ ...store, [e.target.name]: e.target.value })
-            },
 
+            },
 
             enviarFormulario: (e) => {
                 //para que no se recargue cada que le doy enter en un input
                 e.preventDefault()
                 const store = getStore();
-                
+
                 console.log(store.buscador, "lo que busca el usuario en el back")
 
-                fetch("http://localhost:8080/api/products?name="+ store.buscador)
-                .then(respuesta => respuesta.json())
-                .then(data => setStore({ products: data }))
-                .catch(error => console.log(error))
+                fetch("http://localhost:8080/api/products?name=" + store.buscador)
+                    .then(respuesta => respuesta.json())
+                    .then(data => setStore({ products: data }))
+                    .catch(error => console.log(error))
+
+            },
+
+            enviarCompra: (price, name, history) => {
+                const store = getStore();
+                setStore({
+                    ...store,
+                    namebuy: name,
+                    cantidadbuy: store.cantidad,
+                    pricebuy: price
+                })
+                history.push("/buy")
             }
         },
-    };
+    }
 };
 export default getState;

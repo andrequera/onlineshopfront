@@ -25,5 +25,8 @@ body {
 .card .imagenpro {
 object-fit: contain;
 padding: 10px;
+}
 
+.resumendecompra {
+    font-family: 'Dancing Script', cursive;
 }
