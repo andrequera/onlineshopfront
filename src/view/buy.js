@@ -24,6 +24,7 @@ const Buy = () => {
                                 <td>{store.namebuy}</td>
                                 <td>{store.cantidadbuy}</td>
                                 <td>{store.pricebuy*store.cantidadbuy}</td>
+                                <td><a type="button" href="shop" class="btn btn-danger">Cancelar</a></td>
                             </tr>
                         </tbody>
                     </table>
