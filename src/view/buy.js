@@ -23,7 +23,7 @@ const Buy = () => {
                                 <th scope="row">1</th>
                                 <td>{store.namebuy}</td>
                                 <td>{store.cantidadbuy}</td>
-                                <td>{store.pricebuy}</td>
+                                <td>{store.pricebuy*store.cantidadbuy}</td>
                             </tr>
                         </tbody>
                     </table>

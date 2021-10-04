@@ -10,7 +10,7 @@ Rutas:
 - Get: /api/products muestra todos los productos. 
 - Get: /api/products/:id muestra un solo producto. 
 - Get: /api/products?name=`productoabuscar` muestra el filtrado por nombre del producto. (Buscador)
-- Get: /api/categorys/ muestra todas las categorías.
+- Get: /api/categorys muestra todas las categorías.
 - Get: /api/categorys/:id muestra solo una categoria.
 - Get: /api/products/category/:id muestra productos por categorias.
 
