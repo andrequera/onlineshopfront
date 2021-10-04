@@ -33,7 +33,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                 console.log(e.target.value, "campos de la cantidad")
 
                 setStore({ ...store, [e.target.name]: e.target.value })
-
             },
 
             enviarFormulario: (e) => {
@@ -48,7 +47,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(respuesta => respuesta.json())
                     .then(data => setStore({ products: data }))
                     .catch(error => console.log(error))
-
             },
 
             enviarCompra: (price, name, history) => {
@@ -61,7 +59,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
                 history.push("/buy")
             },
-//boton desliza categorias agrupadas
+
+            //boton desliza categorias agrupadas
             getCategorys: () => {
 
                 fetch("https://fierce-island-50875.herokuapp.com/api/categorys/")
@@ -69,7 +68,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => setStore({ categorys: data }))
                     .catch(error => console.log(error))
             },
-//despliega los productos por categoria
+
+            //despliega los productos por categoria
             getProdCat: (id) => {
 
                 fetch("https://fierce-island-50875.herokuapp.com/api/products/category/" + id)
@@ -78,7 +78,15 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .catch(error => console.log(error))
             },
 
+            //ordenar productos por precio de menor a mayor
+            ordenProdPre: () => {
+                const store = getStore();
+                // variable para guardar orden por precio
+                const productSort = store.products.sort(((a, b) => a.price - b.price))
 
+                console.log(productSort, "Ordenando por precio")
+                setStore({ products: productSort })
+            }
         },
     }
 };

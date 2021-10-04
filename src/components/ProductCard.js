@@ -15,6 +15,7 @@ const ProductCard = () => {
             store.products !== null ?
                 (
                     store.products.map((product, i) => {
+                        
                         return (
                             <div className="col-md-3">
                                 <div className="card">
@@ -45,10 +46,12 @@ const ProductCard = () => {
                     })
                 )
                 :
+                
                 (
                     <h1> No se encuentran los productos </h1>
 
                 )
+
         }
 
     </>)
