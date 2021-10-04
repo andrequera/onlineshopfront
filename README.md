@@ -23,7 +23,7 @@ Rutas:
 - Get: /api/products/category/:id muestra productos por categorias.
 
 Contiene dos vistas: 
-1. Shop: donde se observan todos los productos. Contiene el input que permite el filtrado por nombre del producto, fue realizado desde el back. Además, permite escoger la cantidad de producto a comprar y contiene el boton de compra. También, contiene boton de filtro que permite ordenar los productos por precio de menor a mayor.
+1. Shop: donde se observan todos los productos. Contiene el input que permite buscar por nombre del producto (Buscador), fue realizado desde el back. Además, permite escoger la cantidad de producto a comprar y contiene el botón de compra. También, contiene botón de filtro que permite ordenar los productos por precio de menor a mayor.
 
 2. Buy: que se visualiza la compra realizada en tabla con producto, cantidad y precio.
 
