@@ -8,7 +8,8 @@ const ProductCard = () => {
     useEffect(() => {
         actions.getProduct()
     }, [])
-    console.log(store.products,"analizando error")
+    //console.log(store.products,"analizando error")
+
     return (<>
         {
             store.products !== null ?

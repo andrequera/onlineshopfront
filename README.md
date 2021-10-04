@@ -8,7 +8,11 @@ El Back fue desarrollado con node e insomnia para probar los end point.
 
 Rutas: 
 - Get: /api/products muestra todos los productos. 
-- Get: /api/products?name=`productoabuscar` muestra el filtrado por nombre del producto.
+- Get: /api/products/:id muestra un solo producto. 
+- Get: /api/products?name=`productoabuscar` muestra el filtrado por nombre del producto. (Buscador)
+- Get: /api/categorys/ muestra todas las categorías.
+- Get: /api/categorys/:id muestra solo una categoria.
+- Get: /api/products/category/:id muestra productos por categorias.
 
 Contiene dos vistas: 
 1. Shop: donde se observan todos los productos. Contiene el input que permite el fitrado por nombre del producto, fue realizado desde el back. Además, permite escoger la cantidad de producto a comprar y contiene el boton de compra.

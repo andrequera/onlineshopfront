@@ -11,7 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             cantidad: "",
             namebuy: "",
             cantidadbuy: "",
-            pricebuy: ""
+            pricebuy: "",
+            categorys: null,
 
         },
 
@@ -42,7 +43,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                 console.log(store.buscador, "lo que busca el usuario en el back")
 
-                fetch("https://fierce-island-50875.herokuapp.com/products?name=" + store.buscador)
+                //buscador
+                fetch("https://fierce-island-50875.herokuapp.com/api/products?name=" + store.buscador)
                     .then(respuesta => respuesta.json())
                     .then(data => setStore({ products: data }))
                     .catch(error => console.log(error))
@@ -58,7 +60,25 @@ const getState = ({ getStore, getActions, setStore }) => {
                     pricebuy: price
                 })
                 history.push("/buy")
-            }
+            },
+//boton desliza categorias agrupadas
+            getCategorys: () => {
+
+                fetch("https://fierce-island-50875.herokuapp.com/api/categorys/")
+                    .then(respuesta => respuesta.json())
+                    .then(data => setStore({ categorys: data }))
+                    .catch(error => console.log(error))
+            },
+//despliega los productos por categoria
+            getProdCat: (id) => {
+
+                fetch("https://fierce-island-50875.herokuapp.com/api/products/category/" + id)
+                    .then(respuesta => respuesta.json())
+                    .then(data => setStore({ products: data }))
+                    .catch(error => console.log(error))
+            },
+
+
         },
     }
 };
